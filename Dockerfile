@@ -1,5 +1,5 @@
 FROM openjdk
-RUN yum updateinfo && yum install -y \ 
+RUN microdnf update -y && microdnf install -y \ 
     openssh-clients \
     ca-certificates \ 
     bash \
@@ -11,7 +11,7 @@ RUN yum updateinfo && yum install -y \
     openssl-devel \
     util-linux \
     && update-ca-trust \
-    && yum clean all
+    && microdnf clean all
 
 COPY Dockerfile /Dockerfile
 LABEL org.label-schema.docker.dockerfile="/Dockerfile" \
