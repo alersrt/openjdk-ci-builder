@@ -1,4 +1,4 @@
-FROM openjdk
+FROM openjdk:latest
 RUN microdnf update -y && microdnf install -y \ 
     openssh-clients \
     ca-certificates \ 
